@@ -1,7 +1,6 @@
-// Header que cambia al hacer scroll
-const header = document.getElementById("header");
-
+// Header animado al hacer scroll
 window.addEventListener("scroll", () => {
+  const header = document.getElementById("header");
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
@@ -9,15 +8,13 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Scroll suave a secciones
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
-// Volver arriba suavemente
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 }

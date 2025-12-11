@@ -3,80 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YURKAL</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <title>Yurkal</title>
 
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fuente moderna minimal -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 22px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.5s ease;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(9px);
+      padding: 14px 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #a1a1a1;
+      margin-right: 28px;
+      font-size: 10px;
+      cursor: pointer;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    nav button:hover {
+      color: white;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero img {
+      width: 260px;
+      filter: brightness(1.7) invert(1) grayscale(1);
+    }
+
+    .title {
+      margin-top: 34px;
+      font-size: 15px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #b2b2b2;
+      font-weight: 300;
+    }
+
+    /* Section */
+    section {
+      padding: 160px 20px;
+      max-width: 880px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+
+    p {
+      color: #c9c9c9;
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 300;
+    }
+  </style>
+</head>
 <body>
 
   <!-- HEADER -->
   <header id="header">
-    <div class="container">
-      <div class="left">
-        <img 
-          src="https://i.imgur.com/YJEv9U7.jpeg" 
-          alt="Yurkal Logo" 
-          class="logo"
-        />
-
-        <nav class="nav">
-          <button onclick="scrollToTop()">Inicio</button>
-          <button onclick="scrollToSection('historia')">Historia</button>
-          <button onclick="scrollToSection('concepto')">Concepto</button>
-        </nav>
-      </div>
-
-      <span class="estado">Travesía en Proceso</span>
+    <div class="logo">
+      <img src="https://i.imgur.com/YJEv9U7.jpeg" 
+           class="logo-img" 
+           style="height: 55px; mix-blend-mode: screen; filter: invert(1) grayscale(1) brightness(1.7);" />
     </div>
+
+    <nav>
+      <button onclick="scrollToTop()">Inicio</button>
+      <button onclick="scrollToSection('historia')">Historia</button>
+      <button onclick="scrollToSection('concepto')">Concepto</button>
+    </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <img 
-      class="hero-bg"
-      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&grayscale=true" 
-      alt=""
-    />
-
-    <div class="hero-content">
-      <span class="sub">EL SILENCIO ANTES DEL VIAJE</span>
-
-      <img 
-        src="https://i.imgur.com/YJEv9U7.jpeg" 
-        class="hero-logo"
-      />
-
-      <p class="hero-phrase">
-        "Pieza a pieza desde cero, diseños que nacen en el corazón de un barco y crecen en la inmensidad de nuestras tierras."
-      </p>
-
-      <button class="hero-btn" onclick="scrollToSection('historia')">
-        Nuestra Historia
-      </button>
+  <div class="hero">
+    <div>
+      <img src="https://i.imgur.com/YJEv9U7.jpeg" alt="Logo Yurkal" />
+      <div class="title">Travesía en Proceso</div>
     </div>
-  </section>
+  </div>
 
   <!-- HISTORIA -->
-  <section id="historia" class="section">
+  <section id="historia">
     <h2>Historia</h2>
     <p>
-      Aquí va la historia de Yurkal. Luego lo completamos si querés.
+      Yurkal nace como un concepto en constante transformación, explorando los límites entre la estética, el minimalismo y la expresión personal. 
+      Lo que comenzó como una curiosidad se convirtió en una travesía creativa que evoluciona día a día.
     </p>
   </section>
 
   <!-- CONCEPTO -->
-  <section id="concepto" class="section">
+  <section id="concepto">
     <h2>Concepto</h2>
     <p>
-      Aquí va el concepto de tu marca.
+      La esencia de Yurkal se basa en la búsqueda de una identidad visual única.  
+      No es solo una marca: es un viaje hacia formas nuevas de interpretar lo cotidiano, desde la simplicidad y la presencia.
     </p>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 YURKAL — Todos los derechos reservados</p>
-  </footer>
-
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,20 +1,16 @@
-// Scroll suave al hacer clic en los links
-document.addEventListener("DOMContentLoaded", () => {
-  
-  const btnHistoria = document.querySelector("#btn-historia");
-  const btnConcepto = document.querySelector("#btn-concepto");
-  const seccionHistoria = document.querySelector("#historia");
-  const seccionConcepto = document.querySelector("#concepto");
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  if (btnHistoria && seccionHistoria) {
-    btnHistoria.addEventListener("click", () => {
-      seccionHistoria.scrollIntoView({ behavior: "smooth" });
-    });
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
   }
+}
 
-  if (btnConcepto && seccionConcepto) {
-    btnConcepto.addEventListener("click", () => {
-      seccionConcepto.scrollIntoView({ behavior: "smooth" });
-    });
-  }
+window.addEventListener("scroll", () => {
+  const header = document.getElementById("header");
+  if (window.scrollY > 60) header.classList.add("scrolled");
+  else header.classList.remove("scrolled");
 });
